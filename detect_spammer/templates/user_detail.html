@@ -1,0 +1,7 @@
+<h1>{{ user.name }}</h1>
+<p>Phone Number: {{ user.phone_number }}</p>
+<p>Email: {{ email }}</p>
+<p>Spam score: {{ spam_score }}</p>
+{% if user.is_authenticated %}
+    <a href="{% url 'mark_spam' phone_number=user.phone_number %}" class="spam-button">Mark as Spam</a>
+{% endif %}
